@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("images/blackjack.jpg");
+    background-size: cover;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 75px;
+    color: rgb(216, 204, 94);
+}
+
+#message-el {
+    text-align: center;
+    font-size: 50px;
+    border: 2px solid rgba(121, 118, 118, 0.705);
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px 0px;
+}
+
+p {
+    text-align: center;
+    font-size: 75px;
+}
