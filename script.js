@@ -1,6 +1,12 @@
 let sum = 0;
 let cards = [];
 
+let player = {
+    name: 'Hernan',
+    age: 38,
+    chips: 145,
+}
+
 let hasBlackJack = false;
 let isAlive = false;
 
@@ -10,6 +16,10 @@ let messageEl = document.querySelector("#message-el");
 let sumEl = document.querySelector("#sum-el");
 let cardEl = document.querySelector("#card-el");
 let newButton = document.querySelector("#newCard");
+let playerEl = document.querySelector('#player-el');
+
+playerEl.textContent = "Name: " + player.name + " | " + "Chips: " +  player.chips;
+
 
 function getRandomCard() {
   let randomNumber = Math.floor(Math.random() * 13) + 1;
