@@ -41,3 +41,7 @@ button {
     border: none;
     border-radius: 2px;
 }
+
+.main-section {
+    border: solid 2px white;
+}

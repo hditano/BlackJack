@@ -1,10 +1,18 @@
 let sum = 0;
+let computerSum = 0;
 let cards = [];
+let computerCards = [];
 
 let player = {
     name: 'Hernan',
     age: 38,
     chips: 145,
+}
+
+let computer = {
+    name: 'Computer',
+    age: 1,
+    chips: 150,
 }
 
 let hasBlackJack = false;
@@ -17,6 +25,7 @@ let sumEl = document.querySelector("#sum-el");
 let cardEl = document.querySelector("#card-el");
 let newButton = document.querySelector("#newCard");
 let playerEl = document.querySelector('#player-el');
+let computerEl = document.querySelector('#computer-el');
 
 playerEl.textContent = "Name: " + player.name + " | " + "Chips: " +  player.chips;
 
@@ -32,10 +41,20 @@ function getRandomCard() {
   }
 }
 
+// function compareHands() {   
+//     if(computerSum < 15) {
+//         console.log('Computer Sum is less than 15');
+//     }
+// }
+
 function startGame() {
   isAlive = true;
   let firstCard = getRandomCard();
   let secondCard = getRandomCard();
+  let computerFirstCard = getRandomCard();
+  let computerSecondCard = getRandomCard();
+  computerCards = [computerFirstCard, computerSecondCard];
+  computerSum = computerFirstCard + computerSecondCard;
   cards = [firstCard, secondCard];
   sum = firstCard + secondCard;
   renderGame();
@@ -45,6 +64,11 @@ function renderGame() {
   cardEl.textContent = "Cards: ";
   for (let i = 0; i < cards.length; i++) {
     cardEl.textContent += cards[i] + " ";
+  }
+
+  computerEl.textContent = "Computer Cards: ";
+  for(let i = 0; i < computerCards.length; i++) {
+      computerEl.textContent += computerCards[i] + " ";
   }
 
   sumEl.textContent = "Sum: " + sum;
@@ -66,6 +90,9 @@ function newCard() {
     let card = getRandomCard();
     sum += card;
     cards.push(card);
+    let computerCard = getRandomCard();
+    computerSum += computerCard;
+    computerCards.push(computerCard);
     renderGame();
   } else {
       newButton.disabled = true;

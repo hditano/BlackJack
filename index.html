@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BlackJack App</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <h1>Blackjack</h1>
-    <p id="message-el">Want to play again?</p>
-    <p id="card-el">Cards: </p>
-    <p id="sum-el">Sum: </p>
+    <div class="main-section">
+      <p id="message-el">Want to play again?</p>
+      <p id="computer-el">Computer Cards: </p>
+    </div>
+    <p id="card-el">Cards:</p>
+    <p id="sum-el">Sum:</p>
     <button id="saveButton" onclick="startGame()">START GAME</button>
     <button id="newCard" onclick="newCard()">NEW CARD</button>
-    <p id="player-el">Name: | Chips: </p>
-</body>
-<script src="script.js  "></script>
+    <p id="player-el">Name: | Chips:</p>
+  </body>
+  <script src="script.js  "></script>
 </html>
