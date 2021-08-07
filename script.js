@@ -4,16 +4,16 @@ let cards = [];
 let computerCards = [];
 
 let player = {
-    name: 'Hernan',
-    age: 38,
-    chips: 145,
-}
+  name: "Hernan",
+  age: 38,
+  chips: 145,
+};
 
 let computer = {
-    name: 'Computer',
-    age: 1,
-    chips: 150,
-}
+  name: "Computer",
+  age: 1,
+  chips: 150,
+};
 
 let hasBlackJack = false;
 let isAlive = false;
@@ -22,13 +22,14 @@ let message = "";
 
 let messageEl = document.querySelector("#message-el");
 let sumEl = document.querySelector("#sum-el");
+let computerSumEl = document.querySelector("#computerSum-el");
 let cardEl = document.querySelector("#card-el");
 let newButton = document.querySelector("#newCard");
-let playerEl = document.querySelector('#player-el');
-let computerEl = document.querySelector('#computer-el');
+let playerEl = document.querySelector("#player-el");
+let computerEl = document.querySelector("#computer-el");
 
-playerEl.textContent = "Name: " + player.name + " | " + "Chips: " +  player.chips;
-
+playerEl.textContent =
+  "Name: " + player.name + " | " + "Chips: " + player.chips;
 
 function getRandomCard() {
   let randomNumber = Math.floor(Math.random() * 13) + 1;
@@ -41,7 +42,7 @@ function getRandomCard() {
   }
 }
 
-// function compareHands() {   
+// function compareHands() {
 //     if(computerSum < 15) {
 //         console.log('Computer Sum is less than 15');
 //     }
@@ -67,11 +68,12 @@ function renderGame() {
   }
 
   computerEl.textContent = "Computer Cards: ";
-  for(let i = 0; i < computerCards.length; i++) {
-      computerEl.textContent += computerCards[i] + " ";
+  for (let i = 0; i < computerCards.length; i++) {
+    computerEl.textContent += computerCards[i] + " ";
   }
 
   sumEl.textContent = "Sum: " + sum;
+  computerSumEl.textContent = "Sum: " + computerSum;
   if (sum <= 20) {
     message = "Do you want to draw a new card?";
   } else if (sum === 21) {
@@ -79,10 +81,18 @@ function renderGame() {
     hasBlackJack = true;
   } else {
     message = "You are out of the game!!";
+    chipsEarned(player);
     isAlive = false;
   }
 
   messageEl.textContent = message;
+}
+
+function chipsEarned(player) {
+  if (player === player && sum > 20) {
+    player.chips -= 5;
+    console.log(player.chips);
+  }
 }
 
 function newCard() {
@@ -95,7 +105,7 @@ function newCard() {
     computerCards.push(computerCard);
     renderGame();
   } else {
-      newButton.disabled = true;
-      console.log('button disabled');
+    newButton.disabled = true;
+    console.log("button disabled");
   }
 }
